@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: LibraryManagementSystem
+    env: static
+    buildCommand: chmod +x mvnw && ./mvnw clean install
+    startCommand: java -jar target/LibraryManagementSystem-0.0.1-SNAPSHOT.jar
+    environment:
+      JAVA_VERSION: 17
