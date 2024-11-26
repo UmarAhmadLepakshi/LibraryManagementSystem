@@ -1,0 +1,134 @@
+@charset "ISO-8859-1";
+
+
+body{
+	background-image: url("https://www.transparenttextures.com/patterns/subtle-freckles.png");
+    background-color: #009183;
+}
+
+.container{
+	margin :0;
+	width:100%;
+	display: flex; /* Enables Flexbox */
+	flex-direction: column;
+    align-items: center; /* Vertically centers items */
+    justify-content: center;
+    
+	
+}
+
+.nav-div{
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
+	background-color: white;
+	border-radius: 25px;
+	padding: 5px 20px; 
+	width:90%
+	
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+	height:100px;
+}
+
+.nav-container {
+  display: flex;
+}
+
+.nav-link{
+	display: flex;
+	list-style: none; 
+	gap: 30px; 
+	margin: 0;
+	padding: 0;
+}
+
+.nav-link li a{
+	text-decoration :none;
+	color:#ef7d37;
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+
+.nav-link li a:hover {
+  color:#009183;
+ }
+
+.form-container{
+	margin:5%;
+	display: flex; /* Enables Flexbox */
+	flex-direction: column;
+    align-items: center; /* Vertically centers items */
+	background-color: white;
+	border-radius: 25px;
+	width:50%;
+	height:300px;
+}
+
+.forms{
+	height : 400px;
+}
+
+.msg{
+	color : #009183;
+}
+
+.feild{
+	margin:10px;
+	font-size: 20px;
+  	font-weight: bold; 
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+label{
+	flex-basis: 150px;
+	margin-right: 20px;
+	color : orange;
+	text-align: left;
+}
+
+input{
+	flex-basis: 250px;
+	padding:5px;
+	border-radius:5px;
+	border-color:#009183;
+	border-style: solid;
+	color:#009183;
+	width : 250px
+}
+
+.btn-feild{
+	display: flex; 
+	flex-direction: column;
+	
+}
+
+button{
+	width : 90%;
+	margin-top  : 20px;
+	padding:10px;
+	font-size: 20px;
+  	font-weight: bold; 
+  	color:white;
+  	background-color:#009183;
+  	border-style: solid;
+  	border-radius: 5px;
+}
+
+button:hover{
+	color:orange;
+}
+
+.note{
+	font-size:10px;
+	color:orange;
+}

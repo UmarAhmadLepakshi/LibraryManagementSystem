@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>LMS</title>
+	<link rel="icon" th:href="@{/images/logoLms.png}" type="image/png">
+	<link rel="stylesheet" th:href="@{/css/index.css}" />
+</head>
+<body>
+	<div class="container">
+		<div class="nav-div">
+				<div class="logo-container">
+					<img class="logo" alt="Logo" th:src="@{/images/LmsLogo.png}">
+				</div>
+				<div class="nav-container">
+					<nav>
+						<ul class="nav-link">
+							<li>
+								<a th:href="@{/library/addBook}">AddBook</a>
+							</li>
+							<li>
+								<a th:href="@{/library/allBooksList}">Books</a>
+							</li>
+							<li>
+								<a th:href="@{/library/allBorrowersList}">Borrowers</a>
+							</li>
+							<li>
+								<a th:href="@{/library/logout}">Logout</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		<div class="form-container forms">
+			<h1 class="msg">Enter the Details of Borrower</h1>
+			<form action="/library/borrow" method="post">
+				<div class="feild">
+					<label>Book Id</label>
+					<input type="number" name="bookId" th:value="${bookData.bookId}" readonly>
+				</div>
+				<div class="feild">
+					<label>Book Name</label>
+					<input type="text" name="bookName" th:value="${bookData.bookName}">
+				</div>
+				<div class="feild">
+					<label>Author Name</label>
+					<input type="text" name="author"  th:value="${bookData.author}">
+				</div>
+				<div class="feild">
+					<label>Borrower Name</label>
+					<input type="text" name="borrowerName">
+				</div>
+				<div class="feild">
+					<label>Borrower Ph.No</label>
+					<input type="number" name="borrowerNum">
+				</div>
+				<div class="feild">
+					<button type="submit">Add Borrowers Details</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

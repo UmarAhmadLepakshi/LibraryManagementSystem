@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>LMS</title>
+	<link rel="icon" th:href="@{/images/logoLms.png}" type="image/png">
+	<link rel="stylesheet" th:href="@{/css/index.css}" />
+	<link rel="stylesheet" th:href="@{/css/list.css}" />
+</head>
+<body>
+	<div class="container">
+			<div class="nav-div">
+				<div class="logo-container">
+					<img class="logo" alt="Logo" th:src="@{/images/LmsLogo.png}">
+				</div>
+				<div class="nav-container">
+					<nav>
+						<ul class="nav-link">
+							<li>
+								<a th:href="@{/library/addBook}">AddBook</a>
+							</li>
+							<li>
+								<a th:href="@{/library/allBooksList}">Books</a>
+							</li>
+							<li>
+								<a th:href="@{/library/allBorrowersList}">Borrowers</a>
+							</li>
+							<li>
+								<a th:href="@{/library/logout}">Logout</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		
+		<div class="list-container">
+			<table>
+				<tr>
+					<th>BorrowId</th>
+					<th>BookId</th>
+					<th>BookName</th>
+					<th>Author</th>
+					<th>BorrowerName</th>
+					<th>BorrowerNumber</th>
+					<th>Status</th>
+					<th>UpdateStatus</th>
+				</tr>
+				<tr th:each="allBorrowers : ${allBorrowers}">
+					<td th:text="${allBorrowers.id}"></td>
+					<td th:text="${allBorrowers.bookId}"></td>
+					<td th:text="${allBorrowers.bookName}"></td>
+					<td th:text="${allBorrowers.author}"></td>
+					<td th:text="${allBorrowers.borrowerName}"></td>
+					<td th:text="${allBorrowers.borrowerNum}"></td>
+					<td th:text="${allBorrowers.borrowStatus}"></td>
+					<td>
+						<form action="/library/returnBook" method="post">
+							<input type="hidden" name="id" th:value="${allBorrowers.id}">
+							<button class="btn" type="submit">returned</button>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

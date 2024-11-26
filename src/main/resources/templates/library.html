@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>LMS</title>
+	<link rel="icon" th:href="@{/images/logoLms.png}" type="image/png">
+	<link rel="stylesheet" th:href="@{/css/index.css}" />
+	<link rel="stylesheet" th:href="@{/css/list.css}" />
+</head>
+<body>
+	<div class="container">
+			<div class="nav-div">
+				<div class="logo-container">
+					<img class="logo" alt="Logo" th:src="@{/images/LmsLogo.png}">
+				</div>
+				<div class="nav-container">
+					<nav>
+						<ul class="nav-link">
+							<li>
+								<a th:href="@{/library/addBook}">AddBook</a>
+							</li>
+							<li>
+								<a th:href="@{/library/allBooksList}">Books</a>
+							</li>
+							<li>
+								<a th:href="@{/library/allBorrowersList}">Borrowers</a>
+							</li>
+							<li>
+								<a th:href="@{/library/logout}">Logout</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		
+		<div class="list-container">
+			<table>
+				<tr>
+					<th>BookId</th>
+					<th>BookName</th>
+					<th>Author</th>
+					<th>PublishedYear</th>
+					<th>BorrowIt</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+				<tr th:each="allBooks : ${allBooks}">
+					<td th:text="${allBooks.bookId}"></td>
+					<td th:text="${allBooks.bookName}"></td>
+					<td th:text="${allBooks.author}"></td>
+					<td th:text="${allBooks.publishedYear}"></td>
+					<td>
+						<form action="/library/borrowData" method="post">
+							<input type="hidden" name="bookId" th:value="${allBooks.bookId}">
+							<input type="hidden" name="bookName" th:value="${allBooks.bookName}">
+							<input type="hidden" name="author" th:value="${allBooks.author}">
+							<button class="btn" type="submit">Borrow</button>
+						</form>
+					</td>
+					<td>
+						<form action="/library/updateBookDetails" method="post">
+							<input type="hidden" name="bookId" th:value="${allBooks.bookId}">
+							<input type="hidden" name="bookName" th:value="${allBooks.bookName}">
+							<input type="hidden" name="author" th:value="${allBooks.author}">
+							<input type="hidden" name="publishedYear" th:value="${allBooks.publishedYear}">
+							<button class="btn" type="submit">Update</button>
+						</form>
+					</td>
+					<td>
+						<form action="/library/removeBook" method="post">
+							<input type="hidden" name="bookId" th:value="${allBooks.bookId}">
+							<button class="btn" type="submit">Remove</button>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@charset "ISO-8859-1";
+
+
+.list-container{
+	margin-top : 20px;
+	padding : 20px;
+	width : 90%;
+	background-color : white;	
+	border-radius : 20px;
+}
+
+table
+{
+	padding : 5px;
+	width : 100%;
+	border : 2px groove #009183;
+	border-collapse: collapse;
+	border-color : #009183;
+	border-radius : 20px;
+}
+
+th
+{
+	height : 50px;
+	border : 1px groove;
+	background-color : #009183;
+	border-collapse: collapse;
+	border-color : white;
+	color : white;
+}
+
+td{
+	padding : 5px;
+	text-align: center;
+	border : 1px groove;
+	border-collapse: collapse;
+	border-color : #009183;
+}
+
+.btn{
+	width : 90%;
+	margin : 2px;
+	padding:5px;
+	font-size: 10px;
+  	font-weight: bold; 
+  	color:white;
+  	background-color:#009183;
+  	border-style: solid;
+  	border-radius: 5px;
+}

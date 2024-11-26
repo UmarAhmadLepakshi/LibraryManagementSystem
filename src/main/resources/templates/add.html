@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>LMS</title>
+	<link rel="icon" th:href="@{/images/logoLms.png}" type="image/png">
+	<link rel="stylesheet" th:href="@{/css/index.css}" />
+</head>
+<body>
+	<div class="container">
+		<div class="nav-div">
+			<div class="logo-container">
+				<img class="logo" alt="Logo" th:src="@{/images/LmsLogo.png}">
+			</div>
+			<div class="nav-container">
+				<nav>
+					<ul class="nav-link">
+						<li>
+							<a th:href="@{/library/addBook}">AddBook</a>
+						</li>
+						<li>
+							<a th:href="@{/library/allBooksList}">Books</a>
+						</li>
+						<li>
+							<a th:href="@{/library/allBorrowersList}">Borrowers</a>
+						</li>
+						<li>
+							<a th:href="@{/library/logout}">Logout</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="form-container">
+			<h1 class="msg">Add New Book</h1>
+			<form action="/library/addNewBook" method="post">
+				<div class="feild">
+					<label>BookName</label>
+					<input type="text" name="bookName">
+				</div>
+				<div class="feild">
+					<label>AuthorName</label>
+					<input type="text" name="author">
+				</div>
+				<div class="feild">
+					<label>PublishedYear</label>
+					<input type="number" name="publishedYear">
+				</div>
+				<div class="feild">
+					<button type="submit">Add Book</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
